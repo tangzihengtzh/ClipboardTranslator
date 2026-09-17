@@ -27,6 +27,18 @@ A lightweight Windows tray app for instant Chinese–English clipboard translati
 - Single-instance guard with existing-process activation
 - Portable single-file publish supported (Phase 3)
 
+## 修复记录 Release Notes
+
+### v1.0.1
+
+- 修复单个中文或英文词汇触发翻译时，模型可能返回“你好！请问有什么可以帮你的？”等普通聊天回复的问题。
+- 修复模型首次响应格式异常时，重试请求丢失原始翻译方向提示词的问题；重试时现在仍会明确要求执行中译英或英译中，并返回 JSON。
+
+### v1.0.1
+
+- Fixed an issue where translating certain single Chinese or English words could display a generic assistant greeting instead of a translation.
+- Fixed the retry path losing the original translation-direction instruction after a malformed model response; retries now preserve the Chinese↔English translation instruction while still requiring JSON output.
+
 ## 快速开始 Quick Start
 
 ### 1. 构建 Build

@@ -80,9 +80,11 @@ public sealed class TranslationService
             // 重试一次，附加更严格的系统提示
             if (!cancellationToken.IsCancellationRequested)
             {
+                string strictSystemPrompt = TranslationPromptBuilder.BuildSystemPrompt(direction.Value) +
+                    " Return valid JSON only: {\"text\":\"...\"}";
                 var strictMessages = new List<ChatMessage>
                 {
-                    new ChatMessage { Role = "system", Content = "Return valid JSON only: {\"text\":\"...\"}" },
+                    new ChatMessage { Role = "system", Content = strictSystemPrompt },
                     new ChatMessage { Role = "user", Content = source },
                 };
                 var strictRequest = new ChatCompletionRequest

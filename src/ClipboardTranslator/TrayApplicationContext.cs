@@ -315,7 +315,7 @@ internal sealed class TrayApplicationContext : ApplicationContext
     private void ShowAbout()
     {
         MessageBox.Show(
-            "ClipboardTranslator V1.0\n\n" +
+            "ClipboardTranslator V1.0.1\n\n" +
             "复制文本后按 Ctrl + Alt + Shift + T 即可翻译。\n" +
             "翻译内容将发送到您配置的 LLM 服务。",
             "关于",
